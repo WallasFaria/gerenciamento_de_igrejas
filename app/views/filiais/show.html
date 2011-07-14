@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @filial.nome %>
+</p>
+
+<p>
+  <b>Endereo:</b>
+  <%= @filial.endereco %>
+</p>
+
+<p>
+  <b>Historia:</b>
+  <%= @filial.historia %>
+</p>
+
+<%= image_tag @filial.imagem.url(:tamanho_pequeno) %> <p>
+
+
+<%= link_to 'Edit', edit_filial_path(@filial) %> |
+<%= link_to 'Back', filiais_path %>

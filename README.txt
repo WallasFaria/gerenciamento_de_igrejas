@@ -1,0 +1,1 @@
+Sistema de gerenciamento dos membros e afazeres de uma igreja

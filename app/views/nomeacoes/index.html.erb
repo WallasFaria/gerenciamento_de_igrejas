@@ -1,0 +1,6 @@
+<% @nomeacoes.each do |n| %>
+  <li>Nomeado dia <b><%= n.data.strftime('%d/%m/%Y') %></b> ao ministério <b><%= n.ministerio.nome %></b></li>
+<% end %>
+</br>
+<%= link_to 'Nomear', new_membro_nomeacao_path(params[:id]) %>
+<%= link_to 'Voltar', :back %>

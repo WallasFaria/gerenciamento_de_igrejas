@@ -1,0 +1,13 @@
+<h1>Novo Usuario</h1>
+
+<%= semantic_form_for @usuario do |f| %>
+<div id="new">
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :filial, :label_method => :nome %>
+  <%= f.input :role, :label_method => :nome %>
+</div>
+<%= f.submit %>
+
+<% end %>

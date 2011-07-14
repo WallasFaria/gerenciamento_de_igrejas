@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ministerio.nome %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @ministerio.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_ministerio_path(@ministerio) %> |
+<%= link_to 'Back', ministerios_path %>

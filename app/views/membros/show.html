@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @membro.nome %>
+</p>
+
+<p>
+  <b>Data de entrada:</b>
+  <%= @membro.data_de_entrada %>
+</p>
+<p>
+  <b>Filial:</b>
+  <%= @membro.filial.bairro %>
+</p>
+
+<p>
+  <b>Ativo:</b>
+  <%= @membro.ativo %>
+</p>
+
+<fieldset><legend>Transferencia(s)</legend>
+  <% @membro.transferencias.each do |t|%>
+    Transferido dia <b> <%= t.data %> </b>
+    de <b> <%= t.filial_origem.bairro %> </b> para <b> <%= t.filial_destino.bairro %> </b>.<br>
+  <% end %>
+  <%= link_to 'transferir', transferencia_membro_path %>
+</fieldset>
+
+<fieldset><legend>Ministerio(s)</legend>
+  <% @membro.ministerios.each do |m|%>
+  	<%= m.nome %> <br>
+  <% end %>
+  <%= link_to 'Detalhes', membro_nomeacoes_path(@membro) %>
+</fieldset>
+
+<p>
+  <b>Telefone(s):</b>
+  <%= @membro.telefones.map(&:numero).join(', ') %> - 
+  <%= link_to 'add', novo_telefone_membro_path %>
+</p>
+  
+
+<%= link_to 'Edit', edit_membro_path(@membro) %> |
+<%= link_to 'Back', membros_path %>

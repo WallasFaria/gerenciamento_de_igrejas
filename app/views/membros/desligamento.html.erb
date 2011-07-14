@@ -1,0 +1,10 @@
+<%= semantic_form_for @deligamento, :as => :desligamento,
+    :url => {:action => :desligar }, :method => :post do |f| %>
+  <div id='new'>  
+    <%= f.input :motivo, :as => :select,
+        :collection => ['Exclusão', 'Afastamento', 'Mudou-se de denominação'] %>
+    <%= f.input :descricao %>
+    <%= f.input :data, :order => [:day, :month, :year], :as => :string %>
+    <%= f.submit 'adicionar' %>
+  </div>
+<% end %>

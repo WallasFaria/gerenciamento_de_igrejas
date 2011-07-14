@@ -1,0 +1,7 @@
+<%= semantic_form_for @telefone, :as => :telefone,
+    :url => {:action => :add_telefone }, :method => :post do |f| %>
+  
+  <%= f.input :numero %>
+  <%= f.submit 'adicionar' %>
+  
+<% end %>

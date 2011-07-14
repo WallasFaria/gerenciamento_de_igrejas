@@ -1,0 +1,7 @@
+<%= semantic_form_for [@membro, @nomeacao] do |f| %>
+  <%= f.input :ministerio, :label_method => :nome %>
+  <%= f.input :data %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Voltar', :back %>

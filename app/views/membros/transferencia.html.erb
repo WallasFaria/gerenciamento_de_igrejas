@@ -1,0 +1,9 @@
+<%= semantic_form_for @transferencia, :as => :transferencia,
+    :url => {:action => :transferir }, :method => :post do |f| %>
+  <div id='new'>
+    <%= f.input :filial_destino, :as => :select, :collection =>  Filial.all.map{|f| [f.bairro, f.id]} %>
+    <%= f.input :data, :order => [:day, :month, :year], :as => :string %>
+  </div>
+  <%= f.submit 'Finalizar' %> </p>
+  
+<% end %> 

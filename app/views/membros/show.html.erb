@@ -1,0 +1,94 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", membros_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_membro_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", membro_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.membro.nome", :default => t("activerecord.labels.nome", :default => "Nome")) %>:</b>
+          <%= @membro.nome %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.email", :default => t("activerecord.labels.email", :default => "Email")) %>:</b>
+          <%= @membro.email %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.data_de_entrada", :default => t("activerecord.labels.data_de_entrada", :default => "Data de entrada")) %>:</b>
+          <%= @membro.data_de_entrada %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.data_de_batismo", :default => t("activerecord.labels.data_de_batismo", :default => "Data de batismo")) %>:</b>
+          <%= @membro.data_de_batismo %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.data_de_nascimento", :default => t("activerecord.labels.data_de_nascimento", :default => "Data de nascimento")) %>:</b>
+          <%= @membro.data_de_nascimento %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.filial_id", :default => t("activerecord.labels.filial_id", :default => "Filial")) %>:</b>
+          <%= @membro.filial_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.endereco", :default => t("activerecord.labels.endereco", :default => "Endereco")) %>:</b>
+          <%= @membro.endereco %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.bairro", :default => t("activerecord.labels.bairro", :default => "Bairro")) %>:</b>
+          <%= @membro.bairro %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.cidade", :default => t("activerecord.labels.cidade", :default => "Cidade")) %>:</b>
+          <%= @membro.cidade %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.estado", :default => t("activerecord.labels.estado", :default => "Estado")) %>:</b>
+          <%= @membro.estado %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.ativo", :default => t("activerecord.labels.ativo", :default => "Ativo")) %>:</b>
+          <%= @membro.ativo %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.imagem_file_name", :default => t("activerecord.labels.imagem_file_name", :default => "Imagem file name")) %>:</b>
+          <%= @membro.imagem_file_name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.imagem_content_type", :default => t("activerecord.labels.imagem_content_type", :default => "Imagem content type")) %>:</b>
+          <%= @membro.imagem_content_type %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.imagem_file_size", :default => t("activerecord.labels.imagem_file_size", :default => "Imagem file size")) %>:</b>
+          <%= @membro.imagem_file_size %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.membro.imagem_updated_at", :default => t("activerecord.labels.imagem_updated_at", :default => "Imagem updated at")) %>:</b>
+          <%= @membro.imagem_updated_at %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_membro_path(@membro), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), membro_path(@membro), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
