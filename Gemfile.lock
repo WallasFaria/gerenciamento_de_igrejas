@@ -61,6 +61,7 @@ GEM
     brstring (3.0.4)
       activesupport (>= 3.0.0)
     builder (2.1.2)
+    calendar_date_select (1.16.2)
     cancan (1.6.5)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -118,6 +119,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   brazilian-rails (~> 3.0.0)
+  calendar_date_select (~> 1.16.2)
   cancan
   formtastic
   inherited_resources

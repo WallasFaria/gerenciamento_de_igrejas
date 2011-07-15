@@ -5,8 +5,93 @@
   <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", :cache => true %>
   <%= javascript_include_tag :defaults, :cache => true %>
   <%= csrf_meta_tag %>
+
 </head>
 <body>
+      <script> 
+          function mascara_data(data){ 
+              var mydata = ''; 
+              mydata = mydata + data; 
+              if (mydata.length == 2){ 
+                  mydata = mydata + '/'; 
+                  document.forms[0].data.value = mydata; 
+              } 
+              if (mydata.length == 5){ 
+                  mydata = mydata + '/'; 
+                  document.forms[0].data.value = mydata; 
+              } 
+              if (mydata.length == 10){ 
+                  verifica_data(); 
+              } 
+          } 
+           
+          function verifica_data () { 
+
+            dia = (document.forms[0].data.value.substring(0,2)); 
+            mes = (document.forms[0].data.value.substring(3,5)); 
+            ano = (document.forms[0].data.value.substring(6,10)); 
+
+            situacao = ""; 
+            // verifica o dia valido para cada mes 
+            if ((dia < 01)||(dia < 01 || dia > 30) && (  mes == 04 || mes == 06 || mes == 09 || mes == 11 ) || dia > 31) { 
+                situacao = "falsa"; 
+            } 
+
+            // verifica se o mes e valido 
+            if (mes < 01 || mes > 12 ) { 
+                situacao = "falsa"; 
+            } 
+
+            // verifica se e ano bissexto 
+            if (mes == 2 && ( dia < 01 || dia > 29 || ( dia > 28 && (parseInt(ano / 4) != ano / 4)))) { 
+                situacao = "falsa"; 
+            } 
+    
+            if (document.forms[0].data.value == "") { 
+                situacao = "falsa"; 
+            } 
+    
+            if (situacao == "falsa") { 
+                alert("Data inválida!"); 
+                document.forms[0].data.focus(); 
+            } 
+          } 
+
+          function mascara_hora(hora){ 
+              var myhora = ''; 
+              myhora = myhora + hora; 
+              if (myhora.length == 2){ 
+                  myhora = myhora + ':'; 
+                  document.forms[0].hora.value = myhora; 
+              } 
+              if (myhora.length == 5){ 
+                  verifica_hora(); 
+              } 
+          } 
+           
+          function verifica_hora(){ 
+              hrs = (document.forms[0].hora.value.substring(0,2)); 
+              min = (document.forms[0].hora.value.substring(3,5)); 
+               
+              alert('hrs '+ hrs); 
+              alert('min '+ min); 
+               
+              situacao = ""; 
+              // verifica data e hora 
+              if ((hrs < 00 ) || (hrs > 23) || ( min < 00) ||( min > 59)){ 
+                  situacao = "falsa"; 
+              } 
+               
+              if (document.forms[0].hora.value == "") { 
+                  situacao = "falsa"; 
+              } 
+
+              if (situacao == "falsa") { 
+                  alert("Hora inválida!"); 
+                  document.forms[0].hora.focus(); 
+              } 
+          } 
+       </script> 
   <div id="container">
     <div id="header">
       <h1><a href="/">Gerenciamento de Igrejas</a></h1>
@@ -18,7 +103,12 @@
         </ul>
       </div>
       <div id="main-navigation">
-        <ul class="wat-cf"></ul>
+        <ul class="wat-cf">
+          <li><a href="#"><%= t("web-app-theme.home", :default => "Home") %></a></li>
+          <li><a href=<%= membros_path %>><%= t("web-app-theme.membros", :default => "Membros") %></a></li>
+          <li><a href=<%= filiais_path %>><%= t("web-app-theme.filiais", :default => "Filiais") %></a></li>
+          <li><a href=<%= ministerios_path %>><%= t("web-app-theme.ministerios", :default => "Ministerios") %></a></li>
+        </ul>
       </div>
     </div>    
     <div id="wrapper" class="wat-cf">

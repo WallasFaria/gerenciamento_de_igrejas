@@ -1,4 +1,4 @@
-1310675697
+1310714876
 Application	D:/projetos/gerenciamento_de_igrejas/config/application.rb	  class Application 
 ApplicationController	D:/projetos/gerenciamento_de_igrejas/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/application_helper.rb	module ApplicationHelper
@@ -13,7 +13,6 @@ CreateTelefones	D:/projetos/gerenciamento_de_igrejas/db/migrate/20110628171357_c
 CreateTransferencia	D:/projetos/gerenciamento_de_igrejas/db/migrate/20110704234920_create_transferencia.rb	class CreateTransferencia 
 CreateUsuarios	D:/projetos/gerenciamento_de_igrejas/db/migrate/20110704235027_create_usuarios.rb	class CreateUsuarios 
 Desligamento	D:/projetos/gerenciamento_de_igrejas/app/models/desligamento.rb	class Desligamento 
-Desligamento	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Desligamento
 DesligamentoTest	D:/projetos/gerenciamento_de_igrejas/test/unit/desligamento_test.rb	class DesligamentoTest 
 DesligamentosHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/desligamentos_helper.rb	module DesligamentosHelper
 DesligamentosHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/desligamentos_helper_test.rb	class DesligamentosHelperTest 
@@ -22,15 +21,18 @@ FiliaisControllerTest	D:/projetos/gerenciamento_de_igrejas/test/functional/filia
 FiliaisHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/filiais_helper.rb	module FiliaisHelper
 FiliaisHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/filiais_helper_test.rb	class FiliaisHelperTest 
 Filial	D:/projetos/gerenciamento_de_igrejas/app/models/filial.rb	class Filial 
-Filial	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Filial
 FilialTest	D:/projetos/gerenciamento_de_igrejas/test/unit/filial_test.rb	class FilialTest 
 Form	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	class Form
+Form	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	class Form
+FormCancelamento	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	class FormCancelamento 
+FormConclusao	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	class FormConclusao 
 FormDesligamento	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	class FormDesligamento 
+FormEncaminhamento	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	class FormEncaminhamento 
+FormPendencia	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	class FormPendencia 
 FormTelefone	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	class FormTelefone 
 FormTransferencia	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	class FormTransferencia 
 GerenciamentoDeIgrejas	D:/projetos/gerenciamento_de_igrejas/config/application.rb	module GerenciamentoDeIgrejas
 Membro	D:/projetos/gerenciamento_de_igrejas/app/models/membro.rb	class Membro 
-Membro	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Membro
 MembroTest	D:/projetos/gerenciamento_de_igrejas/test/unit/membro_test.rb	class MembroTest 
 MembrosController	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	class MembrosController 
 MembrosControllerTest	D:/projetos/gerenciamento_de_igrejas/test/functional/membros_controller_test.rb	class MembrosControllerTest 
@@ -43,7 +45,6 @@ MinisteriosControllerTest	D:/projetos/gerenciamento_de_igrejas/test/functional/m
 MinisteriosHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/ministerios_helper.rb	module MinisteriosHelper
 MinisteriosHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/ministerios_helper_test.rb	class MinisteriosHelperTest 
 Nomeacao	D:/projetos/gerenciamento_de_igrejas/app/models/nomeacao.rb	class Nomeacao 
-Nomeacao	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Nomeacao
 NomeacaoTest	D:/projetos/gerenciamento_de_igrejas/test/unit/nomeacao_test.rb	class NomeacaoTest 
 NomeacoesController	D:/projetos/gerenciamento_de_igrejas/app/controllers/nomeacoes_controller.rb	class NomeacoesController 
 NomeacoesControllerTest	D:/projetos/gerenciamento_de_igrejas/test/functional/nomeacoes_controller_test.rb	class NomeacoesControllerTest 
@@ -61,20 +62,17 @@ SessionsHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/sessions_helper.
 SessionsHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/sessions_helper_test.rb	class SessionsHelperTest 
 Str	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function Str(key, holder, stack)
 Telefone	D:/projetos/gerenciamento_de_igrejas/app/models/telefone.rb	class Telefone 
-Telefone	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Telefone
 TelefoneTest	D:/projetos/gerenciamento_de_igrejas/test/unit/telefone_test.rb	class TelefoneTest 
 TelefonesControllerTest	D:/projetos/gerenciamento_de_igrejas/test/functional/telefones_controller_test.rb	class TelefonesControllerTest 
 TelefonesHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/telefones_helper.rb	module TelefonesHelper
 TelefonesHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/telefones_helper_test.rb	class TelefonesHelperTest 
 TestCase	D:/projetos/gerenciamento_de_igrejas/test/test_helper.rb	class ActiveSupport::TestCase
 Transferencia	D:/projetos/gerenciamento_de_igrejas/app/models/transferencia.rb	class Transferencia 
-Transferencia	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Transferencia
 TransferenciaTest	D:/projetos/gerenciamento_de_igrejas/test/unit/transferencia_test.rb	class TransferenciaTest 
 TransferenciasHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/transferencias_helper.rb	module TransferenciasHelper
 TransferenciasHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/transferencias_helper_test.rb	class TransferenciasHelperTest 
 Type	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function Type(o)
 Usuario	D:/projetos/gerenciamento_de_igrejas/app/models/usuario.rb	class Usuario 
-Usuario	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	class Usuario
 UsuarioTest	D:/projetos/gerenciamento_de_igrejas/test/unit/usuario_test.rb	class UsuarioTest 
 UsuariosController	D:/projetos/gerenciamento_de_igrejas/app/controllers/usuarios_controller.rb	class UsuariosController 
 UsuariosControllerTest	D:/projetos/gerenciamento_de_igrejas/test/functional/usuarios_controller_test.rb	class UsuariosControllerTest 
@@ -82,12 +80,13 @@ UsuariosHelper	D:/projetos/gerenciamento_de_igrejas/app/helpers/usuarios_helper.
 UsuariosHelperTest	D:/projetos/gerenciamento_de_igrejas/test/unit/helpers/usuarios_helper_test.rb	class UsuariosHelperTest 
 abs	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function abs()
 absolutize	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function absolutize(element)
+accept	D:/projetos/gerenciamento_de_igrejas/public/javascripts/masked-input.js	function accept(c, rule)
 addMethods	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function addMethods(source)
 addText	D:/projetos/gerenciamento_de_igrejas/public/javascripts/controls.js	function addText(mode, condition)
 add_telefone	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def add_telefone
 add_telefone	D:/projetos/gerenciamento_de_igrejas/app/models/membro.rb	  def add_telefone
 all	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function all(iterator, context)
-alterar_filial_do_membro	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	  def alterar_filial_do_membro
+alterar_filial_do_membro	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  def alterar_filial_do_membro
 any	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function any(iterator, context)
 argumentNames	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function argumentNames()
 atualizar_telefone	D:/projetos/gerenciamento_de_igrejas/app/models/membro.rb	  def atualizar_telefone(telefone)
@@ -145,6 +144,7 @@ each	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	functi
 eachSlice	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function eachSlice(number, iterator, context)
 element	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function element(event)
 empty	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function empty()
+encaminhar_para	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  attr_accessor :encaminhar_para, :obs
 encrypt_password	D:/projetos/gerenciamento_de_igrejas/app/models/usuario.rb	  def encrypt_password
 endsWith	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function endsWith(pattern)
 escapeHTML	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function escapeHTML()
@@ -181,10 +181,12 @@ inGroupsOf	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	
 include	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function include(object)
 include	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function include(pattern)
 include	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function include(value)
+index	D:/projetos/gerenciamento_de_igrejas/app/controllers/filiais_controller.rb	  def index
 index	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def index
 index	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function index(value)
 indexOf	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function indexOf(item, i)
 initialize	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def initialize(attributes = {})
+initialize	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  def initialize(attributes = {})
 initialize	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function initialize(object)
 initialize	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function initialize(start, end, exclusive)
 inject	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function inject(memo, iterator, context)
@@ -219,6 +221,7 @@ keys	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	functi
 klass	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function klass()
 last	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function last()
 lastIndexOf	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function lastIndexOf(item, i)
+mask	D:/projetos/gerenciamento_de_igrejas/public/javascripts/masked-input.js	function mask(e)
 match	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function match()
 match	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function match(element, selector)
 max	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function max(iterator, context)
@@ -228,12 +231,16 @@ merge	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	funct
 methodize	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function methodize()
 min	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function min(iterator, context)
 ministerios	D:/projetos/gerenciamento_de_igrejas/app/models/membro.rb	  def ministerios
-ministerios	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	  def ministerios
+ministerios	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  def ministerios
 motivo	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  attr_accessor :data, :motivo, :descricao
+motivo	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  attr_accessor :motivo
+motivo	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  attr_accessor :motivo
 new	D:/projetos/gerenciamento_de_igrejas/app/controllers/sessions_controller.rb	  def new
 new	D:/projetos/gerenciamento_de_igrejas/app/controllers/usuarios_controller.rb	  def new
 novo_telefone	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def novo_telefone
 numero	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  attr_accessor :numero
+obs	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  attr_accessor :encaminhar_para, :obs
+obs	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  attr_accessor :obs
 observe	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function observe(element, eventName, handler)
 on	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function on(element, eventName, selector, callback)
 parseColor	D:/projetos/gerenciamento_de_igrejas/public/javascripts/effects.js	function parseColor(color)
@@ -241,6 +248,7 @@ parseJSON	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	f
 partition	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function partition(iterator, context)
 password	D:/projetos/gerenciamento_de_igrejas/app/models/usuario.rb	  attr_accessor :password
 persisted?	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def persisted?; 
+persisted?	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  def persisted?; 
 pluck	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function pluck(property)
 pode_ser_desligado?	D:/projetos/gerenciamento_de_igrejas/app/models/membro.rb	  def pode_ser_desligado?
 pointer	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function pointer(event)
@@ -293,7 +301,7 @@ toQueryPair	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js
 toQueryParams	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function toQueryParams(separator)
 toQueryString	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function toQueryString()
 toQueryString	D:/projetos/gerenciamento_de_igrejas/public/javascripts/prototype.js	function toQueryString(object)
-tornar_membro_inativo	D:/projetos/gerenciamento_de_igrejas/estrutura.rb	  def tornar_membro_inativo
+tornar_membro_inativo	D:/projetos/gerenciamento_de_igrejas/estrututa1.rb	  def tornar_membro_inativo
 transferencia	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def transferencia
 transferir	D:/projetos/gerenciamento_de_igrejas/app/controllers/membros_controller.rb	  def transferir
 transferir	D:/projetos/gerenciamento_de_igrejas/app/models/membro.rb	  def transferir(data, filial_destino)

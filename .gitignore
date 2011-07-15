@@ -3,4 +3,4 @@ db/*.sqlite3
 log/*.log
 tmp/
 estrutura.rb
-estrutura2.rb
+estrutura1.rb

@@ -65,24 +65,9 @@
         </p>
 
         <p>
-          <b><%= t("activerecord.attributes.membro.imagem_file_name", :default => t("activerecord.labels.imagem_file_name", :default => "Imagem file name")) %>:</b>
-          <%= @membro.imagem_file_name %>
+          <%= image_tag @membro.imagem.url(:tamanho_pequeno) %>
         </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.membro.imagem_content_type", :default => t("activerecord.labels.imagem_content_type", :default => "Imagem content type")) %>:</b>
-          <%= @membro.imagem_content_type %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.membro.imagem_file_size", :default => t("activerecord.labels.imagem_file_size", :default => "Imagem file size")) %>:</b>
-          <%= @membro.imagem_file_size %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.membro.imagem_updated_at", :default => t("activerecord.labels.imagem_updated_at", :default => "Imagem updated at")) %>:</b>
-          <%= @membro.imagem_updated_at %>
-        </p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_membro_path(@membro), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), membro_path(@membro), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

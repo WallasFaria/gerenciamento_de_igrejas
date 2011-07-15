@@ -1,1 +1,24 @@
 /* Override here any style defined by web-app-theme */
+
+#filial_cidade {
+  width: 70%;
+}
+#membro_telefone {
+  width: 50%;
+}
+#membro_data_de_batismo {
+  width: 50%;
+}
+#membro_data_de_nascimento {
+  width: 15%;
+}
+#membro_data_de_entrada {
+  width: 50%;
+}
+#right {
+  float: right;
+  width: 26%;
+}
+#filial_endereco {
+  width: 70%;
+}

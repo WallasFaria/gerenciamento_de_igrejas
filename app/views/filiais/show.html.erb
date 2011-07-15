@@ -1,0 +1,54 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", filiais_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_filial_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", filial_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.filial.nome", :default => t("activerecord.labels.nome", :default => "Nome")) %>:</b>
+          <%= @filial.nome %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.filial.endereco", :default => t("activerecord.labels.endereco", :default => "Endereco")) %>:</b>
+          <%= @filial.endereco %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.filial.bairro", :default => t("activerecord.labels.bairro", :default => "Bairro")) %>:</b>
+          <%= @filial.bairro %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.filial.cidade", :default => t("activerecord.labels.cidade", :default => "Cidade")) %>:</b>
+          <%= @filial.cidade %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.filial.estado", :default => t("activerecord.labels.estado", :default => "Estado")) %>:</b>
+          <%= @filial.estado %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.filial.historia", :default => t("activerecord.labels.historia", :default => "Historia")) %>:</b>
+          <%= @filial.historia %>
+        </p>
+
+        <p>
+          <%= image_tag @filial.imagem.url(:tamanho_medio) %>
+        </p>
+        
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_filial_path(@filial), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), filial_path(@filial), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
