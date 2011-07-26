@@ -10,5 +10,5 @@ gem 'inherited_resources'
 gem 'cancan'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'paperclip', '~> 2.3'
-
+gem 'haml'
 gem 'sqlite3'

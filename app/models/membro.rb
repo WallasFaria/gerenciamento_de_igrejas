@@ -7,7 +7,6 @@ class Membro < ActiveRecord::Base
   has_many :ministerios, :through => :nomeacoes
   
   validates_presence_of :nome, :filial, :email, :data_de_entrada, :telefone, :data_de_nascimento
-  validates_attachment_presence :imagem
   validates_uniqueness_of :email
   #validates_format_of :telefone, :with=>/^\d{14}$/, :message=>'deve ser formado por 10 digitos'
   validates_attachment_size :imagem, :less_than => 0.2.megabytes
@@ -15,8 +14,9 @@ class Membro < ActiveRecord::Base
     :content_type => ['image/jpeg', 'image/png', 'image/gif'],
     :message => "Oops! Certifique-se de que voce esta enviando um arquivo de imagem."
   has_attached_file :imagem, :styles => {:tamanho_pequeno=>"100x100",
-                                         :tamanho_medio=>"300x300"}
-                                         
+                                         :tamanho_medio=>"300x300"} 
+  validates_attachment_presence :imagem
+  
   attr_accessor :telefone
   attr_reader :retorno
   after_create :add_telefone

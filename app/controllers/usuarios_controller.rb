@@ -12,7 +12,7 @@ class UsuariosController < InheritedResources::Base
   def create
     @usuario = Usuario.new(params[:usuario])
     if @usuario.save
-      redirect_to root_url, :notice => "Signed up!"
+      redirect_to usuarios_path, :notice => "Signed up!"
     else
       render "new"
     end

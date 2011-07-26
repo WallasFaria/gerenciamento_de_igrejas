@@ -4,3 +4,4 @@ log/*.log
 tmp/
 estrutura.rb
 estrutura1.rb
+public/system/imagems/*

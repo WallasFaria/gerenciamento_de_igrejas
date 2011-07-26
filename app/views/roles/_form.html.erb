@@ -1,4 +1,3 @@
-
   <div class="group">
     <%= f.label :nome, t("activerecord.attributes.role.nome", :default => "Nome"), :class => :label %>
     <%= f.text_field :nome, :class => 'text_field' %>
@@ -10,5 +9,5 @@
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
   </button>
   <span class="text_button_padding"><%= t("web-app-theme.or", :default => "or") %></span>
-	<%= link_to t("web-app-theme.cancel", :default => "Cancel"), roles_path, :class => "text_button_padding link_button" %>
+<%= link_to t("web-app-theme.cancel", :default => "Cancel"), roles_path, :class => "text_button_padding link_button" %>
 </div>

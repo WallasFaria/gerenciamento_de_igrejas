@@ -60,7 +60,7 @@ class MembrosController < InheritedResources::Base
     @membro = Membro.find(params[:id])
     @telefone = @membro.telefones.new(params[:telefone])
     if @telefone.save
-      redirect_to(@membro, :notice => 'Telefone adicionado com sucesso.')
+      redirect_to("/filiais/#{@membro.filial.id}/membros/#{@membro.id}", :notice => 'Telefone adicionado com sucesso.')
     else
       render :action => "novo_telefone"
     end
