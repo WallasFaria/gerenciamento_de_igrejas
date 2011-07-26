@@ -1,0 +1,41 @@
+<% if @usuario.errors.any? %>
+	<table class="table">
+    <% @usuario.errors.full_messages.each do |msg| %>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td>
+        <%= msg %>
+      </td>
+      <% end %>
+    </tr>
+  </table>
+<% end %>
+<div class="group wat-cf">
+  <div class="left"><%= f.label :email, "E-mail:", :class => :label %></div>
+  <div class="right">
+  	<%= f.text_field :email, :class => 'text_field' %>
+  	<span class="description">Ex: exemplo@exemplo.com</span>
+  </div>
+</div>
+<div class="group wat-cf">
+  <div class="left"><%= f.label :password, "Senha:", :class => :label %></div>
+  <div class="right"><%= f.password_field :password, :class => 'text_field' %></div>
+</div>
+<div class="group wat-cf">
+  <div class="left"><%= f.label :password_confirmation, "Confirmar senha:", :class => :label %></div>
+  <div class="right"><%= f.password_field :password_confirmation, :class => 'text_field' %></div>
+</div>
+<div class="group wat-cf">
+  <div class="left"><%= f.label :filial, "Filial:", :class => :label %></div>
+  <div class="right"><%= f.select :filial_id, Filial.all.map{|f| [f.bairro, f.id]},:class => 'select' %></div>
+</div>
+<div class="group wat-cf">
+  <div class="left"><%= f.label :role, "Role:", :class => :label %></div>
+  <div class="right"><%= f.select :role_id, Role.all.map{|r| [r.nome, r.id]}, :class => 'select' %></div>
+</div>
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/icons/tick.png") %>  Save
+  </button>
+  <span class="text_button_padding"> ou </span>
+	<%= link_to "Cancelar", usuarios_path, :class => "text_button_padding link_button" %>
+</div>

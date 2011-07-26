@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to filial_path(current_user.filial) if current_user.present?
   end
 
   def create

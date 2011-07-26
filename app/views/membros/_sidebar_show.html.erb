@@ -1,0 +1,9 @@
+<div class="block notice">
+  <h3>Tarefas</h3>
+  <ul class="navigation">
+    <li><%= link_to 'Nomear a ministério', "#{@membro.id}/nomeacoes/new" %></li>
+    <li><%= link_to 'Transferir', "#{@membro.id}/transferencia" %></li>
+    <li><%= link_to 'Add telefone', "#{@membro.id}/novo_telefone" %></li>
+    <li><%= link_to 'Mais detalhes', "#{@membro.id}/historico_membro" %></li>
+  </ul>
+</div>

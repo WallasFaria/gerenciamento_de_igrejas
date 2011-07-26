@@ -1,0 +1,21 @@
+<div class="inner">
+
+<table class="table">
+  <tr>             
+    <th class="first"> Idade </th>
+    <th>Nome</th>
+    <th>Aniversário</th>
+    <th class="last">&nbsp;</th>
+  </tr>
+
+  <% @filial.aniversariantes_do_mes.each do |membro| -%>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td> <%= membro.idade %> </td>
+      <td> <%= link_to membro.nome, "#{membro.filial.id}/membros/#{membro.id}" %> </td>
+      <td> <%= membro.aniversario.strftime('%d/%m/%y') %> </td>
+      <td class="last">
+        <%= link_to "Show", "#{membro.filial.id}/membros/#{membro.id}" %>
+      </td>
+    </tr>
+  <% end %>
+</table>

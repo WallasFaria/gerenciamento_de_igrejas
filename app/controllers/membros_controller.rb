@@ -1,8 +1,23 @@
 class MembrosController < InheritedResources::Base
+  load_and_authorize_resource
+  belongs_to :filial
+
   def index
-    @membros = Membro.find_all_by_ativo(true).paginate :page => params[:page], :per_page => 10
+    if params[:filial_id]
+      @membros = Membro.where('ativo = ? and filial_id = ?', true, params[:filial_id]).paginate :page => params[:page], :per_page => 10
+    else
+      @membros = Membro.find_all_by_ativo(true).paginate :page => params[:page], :per_page => 10
+    end
   end
   
+  def show
+    @membro = Membro.find(params[:id])
+  end
+
+  def historico
+    @membro = Membro.find(params[:id])
+  end
+
   def transferencia
     @membro = Membro.find(params[:id])
     @transferencia = @membro.transferencias.new
@@ -47,7 +62,7 @@ class MembrosController < InheritedResources::Base
     if @telefone.save
       redirect_to(@membro, :notice => 'Telefone adicionado com sucesso.')
     else
-      render :action => "add_telefone"
+      render :action => "novo_telefone"
     end
   end
 

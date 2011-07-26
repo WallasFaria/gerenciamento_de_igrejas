@@ -1,13 +1,18 @@
-<h1>Novo Usuario</h1>
-
-<%= semantic_form_for @usuario do |f| %>
-<div id="new">
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  <%= f.input :filial, :label_method => :nome %>
-  <%= f.input :role, :label_method => :nome %>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "Roles", roles_path  %></li>
+      <li class="active"><%= link_to "Usuários", usuarios_path %></li>
+    </ul>
+  </div>          
+  <div class="content">            
+    <h2 class="title">Novo usuário</h2>
+    <div class="inner">
+      <%= form_for :usuario, :url => usuarios_path, :html => { :class => :form } do |f| %>
+        <%= render :partial => "form", :locals => {:f => f} %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<%= f.submit %>
 
-<% end %>
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

@@ -1,0 +1,6 @@
+<h1>Index</h1><p>
+<% @filial.membros.each do |m| %>
+  <%= m.nome %> <br>
+<% end %>
+---------------------------------------------------<p>
+<%= render(:partial => 'aniversariantes_do_mes') %>

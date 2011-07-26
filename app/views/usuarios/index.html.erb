@@ -1,0 +1,41 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "Roles", roles_path  %></li>
+      <li class="active"><%= link_to "Usuários", usuarios_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <div class="acao">
+      <%= link_to "Novo usuário", new_usuario_path, :class => "button" %> 
+    </div>
+    <h2 class="title">Listagem de usuários</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+          <th>Nome</th>
+          <th>Filial</th>
+          <th>Role</th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @usuarios.each do |usuario| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= usuario.id %></td>
+          <td><%= usuario.email %></td>
+          <td><%= usuario.filial.bairro %></td>
+          <td><%= usuario.role.nome %></td>
+          <td class="last">
+            <%= link_to "Editar", edit_usuario_path(usuario) %>
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <%= will_paginate @usuarios  %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

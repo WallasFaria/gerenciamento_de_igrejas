@@ -2,6 +2,7 @@ class CreateFiliais < ActiveRecord::Migration
   def self.up
     create_table :filiais do |t|
   	  t.string :nome
+      t.dade :data_de_fundacao
   	  t.string :endereco
   	  t.string :bairro
   	  t.string :cidade

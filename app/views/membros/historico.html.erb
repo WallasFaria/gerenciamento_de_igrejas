@@ -1,0 +1,37 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", membros_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_membro_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Histórico")}", '' %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+ 
+		  <h2> <%= @membro.nome %> <h2> <p>
+
+			Membro desde: <%= @membro.data_de_entrada %> <p>
+
+			Histório de transferências:
+			<ul>
+			  <% @membro.transferencias.each do |t| %>
+			  	<li> <h6>Transferido dia <%= t.data %> da filial <%= t.filial_origem.bairro %> para <%= t.filial_destino.bairro %>.</h6> </li>
+			  <% end %>
+			</ul><p>
+
+			Nomeação(ões)
+			<ul>
+			  <% @membro.nomeacoes.each do |n| %>
+			  	<li> <h6> Nomeado dia <%= n.data %> ao ministerio <%= n.ministerio.nome %>.</h6> </li>
+			  <% end %>
+			</ul>
+
+      <div class="wat-cf">
+        <%= link_to "Voltar", :back, :class => "text_button_padding link_button" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

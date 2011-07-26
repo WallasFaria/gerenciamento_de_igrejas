@@ -1,14 +1,15 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", membros_path  %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_membro_path %></li>
+      <li class="first"><%= link_to "Campo #{@filial.bairro}", filial_path(@filial.id) %></li>
+      <li><%= link_to "Membros", filial_membros_path(@filial) %></li>
+      <li class="active"><%= link_to "Novo", new_filial_membro_path(@filial.id) %></li>
     </ul>
   </div>          
   <div class="content">            
     <h2 class="title"><%= t("web-app-theme.new", :default => "New")%>  Membro</h2>
     <div class="inner">
-      <%= form_for :membro, :url => membros_path, :html => { :multipart => true, :class => :form } do |f| -%>
+      <%= form_for [@filial, @membro], :html => { :multipart => true, :class => :form } do |f| -%>
         <%= render :partial => "form", :locals => {:f => f} %>
       <% end -%>
     </div>

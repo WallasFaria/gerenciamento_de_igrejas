@@ -1,14 +1,15 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", filiais_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_filial_path %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", filial_path %></li>
+      <li class="first active"><%= link_to "Campo #{@filial.bairro}",'' %></li>
+      <li><%= link_to "Membros", filial_membros_path(@filial) %></li>
     </ul>
   </div>          
   <div class="content">
     <div class="inner">
-      
+        <DIV style="float: left;" class="borda">
+          <%= image_tag @filial.imagem.url(:tamanho_medio) %>
+        </DIV>
         <p>
           <b><%= t("activerecord.attributes.filial.nome", :default => t("activerecord.labels.nome", :default => "Nome")) %>:</b>
           <%= @filial.nome %>
@@ -38,15 +39,18 @@
           <b><%= t("activerecord.attributes.filial.historia", :default => t("activerecord.labels.historia", :default => "Historia")) %>:</b>
           <%= @filial.historia %>
         </p>
-
-        <p>
-          <%= image_tag @filial.imagem.url(:tamanho_medio) %>
-        </p>
+        <% if @filial.aniversariantes_do_mes.present? %>
+          <FIELDSET class="borda"> <legend class="gray">Aniversariantes do mês</legend>
+            <%= render(:partial => 'aniversariantes_do_mes') %>
+          </FIELDSET>
+        <% end %>
         
+      <p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_filial_path(@filial), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), filial_path(@filial), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-      </div>      
+      </div>
+            
     </div>
   </div>
 </div>

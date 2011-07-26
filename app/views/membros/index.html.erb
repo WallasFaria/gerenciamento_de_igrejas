@@ -1,8 +1,9 @@
 <div class="block">
-  <div class="secondary-navigation">
+  <div class="secondary-navigation">  
     <ul class="wat-cf">
-      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", membros_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_membro_path %></li>
+      <li class="first"><%= link_to "Campo #{@filial.bairro}", filial_path(@filial.id) %></li>
+      <li class="active"><%= link_to "Membros", filial_membros_path(@filial) %></li>
+      <li><%= link_to "Novo", new_filial_membro_path(@filial.id) %></li>
     </ul>
   </div>          
   <div class="content">          
@@ -11,29 +12,22 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.membro.nome", :default => t("activerecord.labels.nome", :default => "Nome")) %>
           </th>
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @membros.each do |membro| -%>
         <tr class="<%= cycle("odd", "even") %>">
-          <td>
-            <%= membro.id %>
-          </td>
-                    <td>
-            <%= link_to membro.nome, membro_path(membro) %>
-          </td>
-                    <td>
-            <%= membro.created_at %>
-          </td>
+          <td> <%= membro.id %> </td>
+          <td> <%= link_to membro.nome, filial_membro_path(@filial.id, membro) %> </td>
+          <td> <%= membro.created_at.strftime('%d/%m/%y') %> </td>
           <td class="last">
-            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", membro_path(membro) %> |
-            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_membro_path(membro) %> |
-            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", membro_path(membro), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            <%= link_to "Mostar", filial_membro_path(@filial.id, membro) %> |
+            <%= link_to "Editar", edit_filial_membro_path(@filial.id, membro) %>
           </td>
-        </tr>          
+        </tr>
         <% end -%>
       </table>
       <div class="actions-bar wat-cf">

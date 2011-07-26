@@ -15,32 +15,30 @@
     <%= f.text_field :nome, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
-
-  <div class="group" id='right'>
-    <%= f.label :bairro, t("activerecord.attributes.filial.bairro", :default => "Bairro"), :class => :label %>
-    <%= f.text_field :bairro, :class => 'text_field' %>
-  </div>
   
   <div class="group">
     <%= f.label :endereco, t("activerecord.attributes.filial.endereco", :default => "Endereco"), :class => :label %>
     <%= f.text_field :endereco, :class => 'text_field' %>
   </div>
 
-  <div class="group" id='right'>
-    <%= f.label :estado, t("activerecord.attributes.filial.estado", :default => "Estado"), :class => :label %>
-    <%= f.select :estado, ["RJ", 'ES', 'SP', 'BH'], :class => 'select' %>
+  <div class="group">
+    <%= f.label :bairro, t("activerecord.attributes.filial.bairro", :default => "Bairro"), :class => :label %>
+    <%= f.text_field :bairro, :class => 'text_field' %>
   </div>
   
-  <div class="group">
+  <div class="group" id="esq">
     <%= f.label :cidade, t("activerecord.attributes.filial.cidade", :default => "Cidade"), :class => :label %>
     <%= f.text_field :cidade, :class => 'text_field' %>
   </div>
 
-
+  <div class="group" id='dir'>
+    <%= f.label :estado, t("activerecord.attributes.filial.estado", :default => "Estado"), :class => :label %>
+    <%= f.select :estado, Endereco.uf, :class => 'select' %>
+  </div>
 
   <div class="group">
     <%= f.label :historia, t("activerecord.attributes.filial.historia", :default => "Historia"), :class => :label %>
-    <%= f.text_area :historia, :class => 'text_area' %>
+    <%= f.text_area :historia, :rows => 8, :class => 'text_area' %>
   </div>
 
   <div class="group">

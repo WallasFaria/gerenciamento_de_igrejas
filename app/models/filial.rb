@@ -8,5 +8,10 @@ class Filial < ActiveRecord::Base
   validates_attachment_content_type :imagem,
     :content_type => ['image/jpeg', 'image/png', 'image/gif'],
     :message => "Oops! Certifique-se de que voce esta enviando um arquivo de imagem."
-  validates_attachment_size :imagem, :less_than => 0.2.megabytes
+  validates_attachment_size :imagem, :less_than => 1.2.megabytes
+
+  def aniversariantes_do_mes
+    membros.select{|m| m.data_de_nascimento.strftime('%m').to_i == Time.now.month.to_i }
+  end
+
 end

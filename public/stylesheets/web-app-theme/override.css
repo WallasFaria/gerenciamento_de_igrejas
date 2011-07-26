@@ -1,24 +1,29 @@
 /* Override here any style defined by web-app-theme */
-
-#filial_cidade {
-  width: 70%;
+#imagem {
+	width: 187px;
+	height: 138px;
+	position: center;
+	margin: 11px;
 }
-#membro_telefone {
-  width: 50%;
+.foto {
+	margin: 10px 5px 8px -6px;
+	width: 210px;
+	height: 160px;
+	background:#fff url(/images/foto.jpg) no-repeat center;
 }
-#membro_data_de_batismo {
-  width: 50%;
-}
-#membro_data_de_nascimento {
-  width: 15%;
-}
-#membro_data_de_entrada {
-  width: 50%;
+.borda {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 #right {
-  float: right;
-  width: 26%;
+  float: left;
+  width: 25%;
 }
-#filial_endereco {
-  width: 70%;
+#right input {
+  width: 120px;
 }
+#dir { width: 10%; float: right;}
+#dir select{ width: 100%;}
+#esq { width: 88%; float: left; margin-right: 2%;}
+.acao { float: right; margin: 13px 10px 10px 10px;}

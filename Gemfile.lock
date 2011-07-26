@@ -61,7 +61,6 @@ GEM
     brstring (3.0.4)
       activesupport (>= 3.0.0)
     builder (2.1.2)
-    calendar_date_select (1.16.2)
     cancan (1.6.5)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -110,7 +109,6 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (0.3.28)
     validation_reflection (1.0.0)
-    web-app-theme (0.6.3)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -119,7 +117,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   brazilian-rails (~> 3.0.0)
-  calendar_date_select (~> 1.16.2)
   cancan
   formtastic
   inherited_resources
@@ -127,5 +124,4 @@ DEPENDENCIES
   rails (= 3.0.8)
   sqlite3
   validation_reflection
-  web-app-theme (>= 0.6.2)
   will_paginate (~> 3.0.pre2)

@@ -1,4 +1,9 @@
-class UsuariosController < ApplicationController
+class UsuariosController < InheritedResources::Base
+  load_and_authorize_resource
+
+  def index
+    @usuarios = Usuario.paginate :page => params[:page], :per_page => 10
+  end
 
   def new
     @usuario = Usuario.new

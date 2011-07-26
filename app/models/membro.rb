@@ -4,30 +4,39 @@ class Membro < ActiveRecord::Base
   has_many :nomeacoes
   has_many :desligamentos
   belongs_to :filial
-  #has_many :ministerios, :through => :nomeacoes
-  has_attached_file :imagem, :styles => {:tamanho_pequeno=>"150x150",
-                                         :tamanho_medio=>"300x300", 
-                                         :tamanho_grande=>"600x600"}
-  validates_presence_of :nome, :endereco, :bairro, :cidade, :estado
-  validates_attachment_presence :imagem  
+  has_many :ministerios, :through => :nomeacoes
+  
+  validates_presence_of :nome, :filial, :email, :data_de_entrada, :telefone, :data_de_nascimento
+  validates_attachment_presence :imagem
+  validates_uniqueness_of :email
+  #validates_format_of :telefone, :with=>/^\d{14}$/, :message=>'deve ser formado por 10 digitos'
+  validates_attachment_size :imagem, :less_than => 0.2.megabytes
   validates_attachment_content_type :imagem,
     :content_type => ['image/jpeg', 'image/png', 'image/gif'],
     :message => "Oops! Certifique-se de que voce esta enviando um arquivo de imagem."
-  validates_attachment_size :imagem, :less_than => 0.2.megabytes
-  
+  has_attached_file :imagem, :styles => {:tamanho_pequeno=>"100x100",
+                                         :tamanho_medio=>"300x300"}
+                                         
   attr_accessor :telefone
   attr_reader :retorno
   after_create :add_telefone
 
-  validates_presence_of :nome
-  validates_presence_of :filial
-  validates_presence_of :email
-  validates_presence_of :data_de_entrada
-  validates_presence_of :telefone
-  validates_presence_of :data_de_nascimento
-  validates_uniqueness_of :email
-  validates_format_of :telefone, :with=>/^\d{10}$/, :message=>'deve ser formado por 10 digitos'
+  def idade
+    hoje = Time.now
+    if hoje.month < data_de_nascimento.month or (hoje.month == data_de_nascimento.month and hoje.day < data_de_nascimento.day )
+       hoje.year - data_de_nascimento.year - 1
+    else
+      hoje.year - data_de_nascimento.year
+    end
+  end
 
+  def aniversario
+    if Time.now.month < data_de_nascimento.month or (Time.now.month == data_de_nascimento.month and Time.now.day <= data_de_nascimento.day)
+      Time.new(Time.now.year, data_de_nascimento.month, data_de_nascimento.day)
+    else
+      Time.new(Time.now.year + 1, data_de_nascimento.month, data_de_nascimento.day)
+    end
+  end
   
   def transferir(data, filial_destino)
     transferencia = transferencias.new(:data => data, :filial_destino_id => filial_destino, :filial_origem => filial)
@@ -69,8 +78,9 @@ class Membro < ActiveRecord::Base
     telefones.update!(telefone)
   end
 =end
+
   private
   def pode_ser_desligado?
-    raise "Impossivel desligar este membro, o memo ja foi desligado." unless ativo == true
+    raise "Impossivel desligar este membro, o mesmo ja foi desligado." unless ativo == true
   end
 end

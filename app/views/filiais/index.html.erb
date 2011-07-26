@@ -23,10 +23,10 @@
             <%= filial.id %>
           </td>
                     <td>
-            <%= link_to filial.nome, filial_path(filial) %>
+            <%= link_to filial.bairro, filial_path(filial) %>
           </td>
                     <td>
-            <%= filial.created_at %>
+            <%= filial.created_at.strftime('%d/%m/%y') %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", filial_path(filial) %> |

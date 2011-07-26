@@ -1,25 +1,50 @@
-<h1>Listing ministerios</h1>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", ministerios_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_ministerio_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Ministerios</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+                    <th>
+            <%= t("activerecord.attributes.ministerio.nome", :default => t("activerecord.labels.nome", :default => "Nome")) %>
+          </th>
+                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @ministerios.each do |ministerio| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= ministerio.id %>
+          </td>
+                    <td>
+            <%= link_to ministerio.nome, ministerio_path(ministerio) %>
+          </td>
+                    <td>
+            <%= ministerio.created_at %>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", ministerio_path(ministerio) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_ministerio_path(ministerio) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", ministerio_path(ministerio), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+        <%= will_paginate @ministerios  %>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Descricao</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @ministerios.each do |ministerio| %>
-  <tr>
-    <td><%= ministerio.nome %></td>
-    <td><%= ministerio.descricao %></td>
-    <td><%= link_to 'Show', ministerio %></td>
-    <td><%= link_to 'Edit', edit_ministerio_path(ministerio) %></td>
-    <td><%= link_to 'Destroy', ministerio, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Ministerio', new_ministerio_path %>
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
